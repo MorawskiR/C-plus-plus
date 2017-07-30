@@ -1,0 +1,91 @@
+// ConsoleApplication12.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std; 
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int a = 10; 
+	int *p; // przypisanie wskaznikowi adresu int
+	p = &a; // przypisanie p adresu zmiennej a 
+	cout << "Pokazanie wartosci a na 2 sposoby "<<endl;
+	cout << "1 sposob a =" <<a<<endl<<"2 sposob *p = "<<*p<<endl;
+	cout<<"Pokazanie adresu na 2 sposoby" <<endl;
+	cout<<"1 sposob &a = "<<&a<<endl<<"2 sposob p ="<<p<<endl; //wskaznik bez gwiazdki to adres 
+	cout<<"Zmiana wartosci poprzez wskaznik *p = *p + 1 " <<endl;
+		*p = *p + 1;
+		cout<<"wartosc a po dodaniu 1 do wskaznika = "<<*p<<endl;
+		cout<<endl;
+		cout<<endl;
+	cout<<"               Uzycie operatora new do alokowania pamieci " <<endl;
+	//new rezerwuje dla nas miejsce w pamieci na okreslony typ 
+	int * pn= new int; // mowi ze jest nam potrzebne miejsce na int 
+	int cos = 1001 ; 
+	int * pt = new int ; // alokacja pamieci 
+	*pt = 1001 ; // zapisanie wartosci do pt 
+cout<<"wartosc cos = "<<cos<<", polozenie cos &cos = "<<&cos<<endl;
+cout<<"wartosc *pt = "<<*pt<< ", polozenie pt = "<<pt<<endl;
+
+	double * wskaznik_double = new double; // tworzenie wskaznika typu double( 8 bajtów )
+	*wskaznik_double = 1000000.0; // zapis tam wartosci 
+	cout<<"double : " <<endl;
+	cout<<"wartosc = "<<*wskaznik_double<<", polozenie: "<<wskaznik_double<<endl;
+	cout<<"polozenie *wskaznik_double : "<<&wskaznik_double<<endl; 
+	cout<<"wielkosc *wskaznik_double : "<<sizeof(*wskaznik_double)<<endl;
+	cout<<"wielkosc wskaznik_double : "<<sizeof wskaznik_double <<endl;
+	// Zwalnianie pamieci za pomocą delete, wraz ze wskaznikiem ktory byl deklarowany przez new 
+	cout<<endl;
+	cout<<endl;
+	cout<< "       wskaznik new do alokacji pamieci dynamicznej \n";
+
+	int * psome = new int[10]; //pobranie bloku na 10 wartosci int
+	delete [] psome; // usuwanie wskaznika 
+	double * tablica = new double [3]; 
+	tablica[0] = 0.1;
+	tablica[1] = 0.3;
+	tablica[2] = 0.55; // umieszczenie wartosci w komórkach tablicy 
+	// wskaznik wskazuje na 1 wartosc tablicy dodajac 1 tak naprawde dodajemy tyle bajtów ile ma yp tablicy 
+	cout<<"tablica[0] = "<<*tablica<<endl;
+	tablica = tablica + 1 ; // zwiekszanie wskaznika 1 oznacza dodanie bajtów do adresu 
+	cout<<"tablica[0] + 1 = "<< *tablica <<endl; 
+	tablica = tablica + 1 ; 
+	cout<<"tablica[1] + 1 = "<< *tablica<<endl;
+	cout<<endl; 
+	cout<<endl; 
+	//delete [] tablica; 
+
+	double wages[3] = {10000.0, 20000.0, 30000.0} ; 
+	short stack[3] = {3,2,1}; 
+	double * pw = wages ; 
+	short * ps = &stack[0];
+
+	cout<<"pw = "<<pw << ", *pw = "<<*pw<<endl;
+	cout<<"dodaj do wskaznika pw 1 : " ;
+	pw = pw + 1 ;
+	cout<<"pw = "<<pw << ", *pw = "<<*pw<<endl;
+
+	cout<<"ps = "<<ps << ", *ps = "<<*ps<<endl;
+	cout<<"dodaj do wskaznika ps 1 : " ;
+	ps = ps + 1 ;
+	cout<<"ps = "<<ps << ", *ps = "<<*ps<<endl;
+
+	cout << " Dostep do dwóch elementów, zapis tablicowy " <<endl; // c++ interpretuje nazwe tablicy jako adres jej 1 elementu
+	cout<<"stack[0] = "<<stack[0]<<", stack[1] = "<<stack[1]<<endl;
+	cout << " Dostep do dwóch elementów, zapis wskaznikowy " <<endl;
+	ps = ps - 1 ; 
+	cout<<"*stack = "<<*stack;
+	ps = ps + 1; 
+	cout<<", *(stack + 1 )= "<<*(stack + 1 )<<endl;
+	cout<<sizeof(wages)<<" wielkosc tablicy wages"<<endl;
+	cout<<sizeof(pw)<<" wielkosc wskaznika wages"<<endl;
+
+	short tail [20] ;
+	cout<<tail<<endl; // wypisuje adres  1 elementu ( 2 bajty) 
+	cout<<&tail<<endl;  // wypisuje adres calej tablicy (20 bajtów) 
+
+	cin.get();
+	cin.get();
+	return 0;
+
+}
