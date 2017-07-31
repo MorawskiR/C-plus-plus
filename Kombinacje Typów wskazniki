@@ -1,0 +1,34 @@
+// ConsoleApplication12.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+using namespace std; 
+struct inflatable 
+	{
+	int year;
+	} ;
+int main()
+{
+	inflatable s01,s02,s03; // deklaracje 3 struktur 
+	s01.year = 1998 ; // odwolanie do struktury kropka i nadanie wartosci polu 
+	inflatable * pa = &s02; // wskaznik pa wskazuje adres drugiej struktury 
+	pa->year = 1999; //  nadanie wartosci przy pomocy odwolania wskaznikowego
+	inflatable trio[3]; // tablica trzech struktur 
+	trio[0].year = 2003; // trio[0] to struktura 
+	const inflatable * arp[3] = {&s01, &s02, &s03}; // utworzenie tablicy wskaznikow 
+	cout<<arp[1]->year<<endl; // odwolanie sie wskaznikiem do pola struktury 
+	const inflatable ** ppa = arp; // wskaznik do tablicy wskaznikow 
+	auto ppb = arp; // auto dedukuje automatycznietyp wskaznika do arp 
+
+	cout<<(*ppa)->year <<endl; // ppa wskazuje na pierwszy element arp czyli &s01
+	cout<<(*(ppb+1))->year<<endl; // ppb to to samo co ppa ale wskazuje na 2 element 
+
+
+	
+	cin.get();
+	cin.get();
+	return 0;
+
+}
