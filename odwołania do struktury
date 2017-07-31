@@ -1,0 +1,33 @@
+//
+#include "stdafx.h"
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+using namespace std; 
+struct inflatable 
+	{
+	char name[20];
+	float volume;
+	double price;
+	} ;
+int main()
+{
+	inflatable * ps = new inflatable; // alokacja pamieci na strukture 
+	cout<<"Podaj nazwe dmuchanej zabawki";
+	cin.get(ps->name,20); 
+	cout<<"Podaj objetosc w stopach szesciennych: " ;
+	cin>>(*ps).volume;
+	cout<<"Podaj cene (zł):" ;
+	cin>>ps->price;
+	cout<<" Nazwa: " << (*ps).name<<endl;
+
+
+	cout<<" Objetosc :" <<ps->volume <<" stop szesciennych\n";
+	cout<<"Cena: "<<ps->price<<"zł" <<endl;
+,
+	
+	cin.get();
+	cin.get();
+	return 0;
+
+}
