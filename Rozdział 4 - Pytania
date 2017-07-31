@@ -1,0 +1,103 @@
+Rozdział 4, Pytania Sprawdzające, Stephen Prata "Język C++ szkoła programowania" 
+// ConsoleApplication12.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+#include <vector>
+#include <array>
+using namespace std;
+	struct ryba 
+	{
+		char rodzaj;
+		int waga;
+		float dlugosc_cm;
+	};
+int main()
+{
+	//1. 
+	/*char aktorzy[30];
+	short betsie[100];
+	float chuck[13];
+	double dipsea[64];
+	//2. 
+	array<char,30> aktorzy;
+	array<short, 100> betsie;
+	array<float,13> chuck;
+	array<double,64> dipsea;
+	//3.
+	int piec_liczb_niepa[5] = {1,3,5,7,9};
+	//4. 
+	int even = piec_liczb_niepa[0] + piec_liczb_niepa[4] ; 
+	cout<<even;  
+	//5 
+	float ideas[3] ={1.5,3.5,9.0};
+	cout<<ideas[1];
+	//6
+	char ser[20] = "cheeseburger";
+	//7
+	char ser[20] ="Walfdorf Salad";
+	//8
+	struct ryba 
+	{
+		char rodzaj;
+		int waga;
+		float dlugosc_cm;
+	};
+	//9
+	struct ryba 
+	{
+		char rodzaj[10];
+		int waga;
+		float dlugosc_cm;
+	};
+	ryba losos =
+	{
+	"norweski",
+	50,
+	22.3
+	};
+	cout<<"ryba to"<<losos.rodzaj<<" wazy " <<losos.waga<<" mierzy " <<losos.dlugosc_cm<<endl;
+	//10
+
+	enum odpowiedz {Nie, Tak, Chyba};
+	odpowiedz pytanie1;
+	//11
+	double ted = 2.1;
+	double * ps = &ted;
+	cout<<*ps;
+	//12
+	float treacle [10] = { 1.2, 22.3, 22.3, 22.3, 22.3, 22.3, 22.3, 22.3, 22.3,1.2};
+	float *pt = treacle;
+	cout<<" 1 - "<<*pt<<" 2 - " <<*(pt+9)<<endl; 
+	//13
+	int n ;
+	cin>>n;
+	int * tablica = new int[n];
+	//14 
+	//cout<<(int *) "Dom wesolych bajtow"; // pokaze adres w pamieci tegolancucha znakow 
+	//15 
+	
+
+	ryba * ps = new ryba;
+	cout<<"podaj rodzaj ryby ";
+	cin>>(*ps).rodzaj;
+	cout<<"podaj wage ";
+	cin>>ps->waga;
+	cout<<"podaj dlugosc ";
+	cin>>ps->dlugosc_cm;
+
+	//16
+	zajmowalo by 80 bajtow nie zaleznie od rozmiaru wprowadzonego lancucha 
+	//17
+	const int k = 10; 
+	std::vector<std::string> a1(k);
+
+	std::array<std::string,10>a2;
+	*/
+	cin.get();
+	cin.get();
+	return 0;
+
+}
