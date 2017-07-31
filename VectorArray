@@ -1,0 +1,54 @@
+// ConsoleApplication12.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+#include <vector>
+#include <array>
+
+using namespace std; 
+
+int main()
+
+{
+	/* vector - to tablica dynamiczna, mozna ustalac rozmiar w trakcie trwania programu, 
+	automatycznie przydziela pamieć, */
+	vector<int> vi; // tablica int o zerowym rozmiarze 
+	int n;
+	cin>>n;
+	vector<double> vd(n);
+	/*array - tablica o stalym rozmiarze( tylko całkowite liczby), pamiec przydzialana na stosie */
+
+	array<int,5> ai;
+	array<double,4> ad = {1.2, 2.1,3.66,3.59};
+	
+	double a1[4] = {1.2, 2.1,3.66,3.59};
+	vector<double>a2(4);
+	a2[0] = 1.0/3.0;
+	a2[1] = 1.0/5.0;
+	a2[2] = 1.0/7.0;
+	a2[3] = 1.0/9.0;
+	// deklaracja i zainicjalizowanie array 
+	array<double,4> a3 = {3.14, 2.65, 3.56, 1.14};
+	array<double,4> a4 ;
+	a4=a3; // dozwolone dla obiektow o tym samym rozmiarze 
+	// mozna odwolywac sie do obiektow indeksowaniem 
+	// array stosuje stos, vector sterta 
+
+	cout<<"a1[2]: " <<a1[2] << " pod adresem " <<&a1[2]<<endl; 
+	cout<<"a2[2]: " <<a2[2] << " pod adresem " <<&a2[2]<<endl; 
+	cout<<"a3[2]: " <<a3[2] << " pod adresem " <<&a3[2]<<endl;
+	cout<<"a4[2]: " <<a4[2] << " pod adresem " <<&a4[2]<<endl; 
+	// naduzycie
+	cout<<"a1[-2]: " <<a1[-2] << " pod adresem " <<&a1[-2]<<endl; //adres zawarty w a1 cofnac sie o 2 elementy i wstawic pokazana wartosc grozi umieszaniem danych poza tablicą
+	cout<<"a3[2]: " <<a3[2] << " pod adresem " <<&a3[2]<<endl;
+	cout<<"a4[2]: " <<a4[2] << " pod adresem " <<&a4[2]<<endl; 
+	//metoda at
+	a2.at(1) =2.3; // przypisuje 2.3 do a2[1]
+	cin.get();
+	cin.get();
+	return 0;
+
+}
+
