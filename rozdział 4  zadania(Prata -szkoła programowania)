@@ -1,0 +1,218 @@
+//1
+	/*
+	const int size= 20;
+	char imie[size];
+	char nazwisko[size];
+	int ocena, wiek; 
+	cout<<" Jak masz na imie ? ";
+	cin.getline(imie, size);
+	cout<<"Jak sie nazywasz? ";
+	cin.getline(nazwisko, size);
+	cout<<"Na jaką ocene zasługujesz ? "; 
+	cin>>ocena;
+	cout<<"Ile masz lat? ";
+	cin>>wiek;
+	cout<<"Nazwisko: "<<nazwisko<<","<<imie<<endl;
+	cout<<"Ocena: "<<ocena-1<<endl;
+	cout<<"Wiek: "<<wiek<<endl;
+*/
+//2 
+	string name, dessert; 
+	cout<<"Podaj swoje imie:\n";
+	getline(cin, name);
+	cout<<"Poda swoj ulubiony deser:\n";
+	getline(cin,dessert);
+	cout<<"Mam dla Ciebie " <<dessert;
+	cout<<", "<<name<<endl;
+  //3 
+  	const int size= 20;
+	char imie[size];
+	char nazwisko[size];
+
+	cout<<"Podaj imie: ";
+	cin.getline(imie,20);
+	cout<<"Podaj nazwisko: ";
+	cin.getline(nazwisko,20);
+	cout<<"Oto informacje zestawione w jeden napis: "<<nazwisko<<", "<<imie<<endl;
+  //4 
+  	string imie, nazwisko; 
+	cout<<"Podaj imie: ";
+	getline(cin, imie);
+	cout<<"Podaj nazwisko: ";
+	getline(cin, nazwisko);
+	cout<<"Oto informacje zestawione w jeden napis: "; 
+	cout<<nazwisko<<", "<<imie<<endl;
+  //5
+  #include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+struct Batonik {
+	char marka_slodyczy[30] ;
+	float waga;
+	int kalorie;
+};
+
+int main()
+{
+	Batonik snack =
+	{
+		"Mocha Munch",
+		2.3,
+		350
+	};
+	cout<<snack.marka_slodyczy<<" "<<snack.waga<<"  "<<snack.kalorie;
+
+	cin.get();
+	cin.get();
+return 0;
+
+//6
+
+}
+//6
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+struct Batonik {
+	char marka_slodyczy[30] ;
+	float waga;
+	int kalorie;
+};
+
+int main()
+{
+	Batonik snack [3] =
+	{
+		{"Mocha Munch",
+		2.3,
+		350},
+		{"kinderSztos", 1.1, 36} ,
+		{"coscos", 2.3, 99}
+	};
+
+	cout<<snack[0].marka_slodyczy<<" "<<snack[0].waga<<"  "<<snack[0].kalorie<<endl;
+	cout<<snack[1].marka_slodyczy<<" "<<snack[1].waga<<"  "<<snack[1].kalorie<<endl;
+	cout<<snack[2].marka_slodyczy<<" "<<snack[2].waga<<"  "<<snack[2].kalorie<<endl;
+	cin.get();
+	cin.get();
+return 0;
+7//
+// ConsoleApplication12.cpp : Defines the entry point for the console application.
+//
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+struct pizza {
+	char nazwa_firmy[30] ;
+	float srednica;
+	int waga;
+};
+
+int main()
+{
+	 struct pizza nowa;
+
+		 cin.getline(nowa.nazwa_firmy, 30);
+		 cin>>nowa.srednica;
+		 cin>>nowa.waga;
+
+		cout<<"nazwa firmy:" <<nowa.nazwa_firmy<<endl;
+		cout<< "srednica: "<<nowa.srednica<<endl;
+		cout<<"waga: "<<nowa.waga<<endl; 
+
+	cin.get();
+	cin.get();
+return 0;
+}
+8//
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct pizza {
+	char nazwa_firmy[30];
+	float srednica;
+	int waga;
+};
+
+int main()
+{
+	 pizza * ws = new pizza; 
+
+		 cout<<"Podaj nazwe firmy: " ;
+		 cin.getline(ws->nazwa_firmy,20);
+
+		 cout<<"podaj srednice pizzy";
+		 cin>>((*ws).srednica);
+
+		 cout<<"podaj wage pizzy";
+		 cin>>ws->waga;
+		 cout<<endl;
+		cout<<"nazwa firmy:" <<ws->nazwa_firmy<<endl;
+		cout<< "srednica: "<<(*ws).srednica<<endl;
+		cout<<"waga: "<<ws->waga<<endl; 
+
+	cin.get();
+	cin.get();
+return 0;
+}
+
+//9
+#include <iostream>
+#include <string>
+using namespace std;
+struct Batonik
+{
+	string marka_slodyczy ;
+	float waga;
+	int kalorie;
+};
+
+int main()
+{
+	Batonik * ws = new Batonik[3];
+
+	ws[0].marka_slodyczy = "niewiem";
+	ws[0].kalorie= 30;
+	ws[0].waga = 30;
+
+	ws[1].marka_slodyczy = "costam";
+	ws[1].kalorie= 40;
+	ws[1].waga = 50;
+
+	ws[2].marka_slodyczy = "kebaba";
+	ws[2].kalorie= 60;
+	ws[2].waga = 70;
+
+
+
+	cout<<ws[0].marka_slodyczy<<" "<<ws[0].waga<<"  "<<ws[0].kalorie<<endl;
+	cout<<ws[1].marka_slodyczy<<" "<<ws[1].waga<<"  "<<ws[1].kalorie<<endl;
+	cout<<ws[2].marka_slodyczy<<" "<<ws[2].waga<<"  "<<ws[2].kalorie<<endl;
+	cin.get();
+	cin.get();
+
+return 0;
+}
+// 10
+	double srednia;
+	double suma=0;
+array<double,3> a1;
+for (int i = 0; i < 3; i++)
+{
+	cout<<"podaj "<<i+1<<" wynik"<<endl;
+	cin>>a1[i];
+}
+for (int i = 0; i < 3; i++)
+{
+	suma = suma + a1[i];
+}
+srednia = suma / 3; 
+cout<<"1 czas " <<a1[0]<<endl;
+cout<<"2 czas " <<a1[1]<<endl;
+cout<<"3 czas " <<a1[2]<<endl;
+cout<<"Srednia = " <<srednia;
