@@ -1,0 +1,539 @@
+#include "stdafx.h"
+#include <string>
+#include <iostream>
+#include <Windows.h>
+#include <cstdlib> // biblioteka do funkcji random
+#include <time.h> // czas do losowania 
+using namespace std;
+int _tmain(int argc, _TCHAR* argv[])
+{
+	
+	int wybrana1;
+	int wybrana2;
+	int wybrana3;
+	int wybrana4;
+	int wybrana5;
+	int wybrana6;
+	int chybil1;
+	int chybil2;
+	int chybil3;
+	int chybil4;
+	int chybil5;
+	int chybil6;
+	int licznik = 0;
+	int decyzja;
+	int size = 6; 
+//	int * tablica = new int[size];
+	cout<<"                     ZAGRAJ W LOTKA " <<endl;
+	cout<<"Wybierasz jak chcesz obstawiac :  " <<endl;
+	cout<<"1 - twoje liczby  "<<endl;
+	cout<<"2 - chybil-trafil  "<<endl;
+
+	std::cin>>decyzja;
+
+	if( decyzja == 1 )
+		{
+	cout<<"Podaj swoje 6 liczb z zakresu 1-49 i pamietaj, ze nie moga sie powtarzac " <<endl;
+	std::cin.get();
+	//system("cls");
+	cout<<" Podaj 1 liczbe :"<<endl;
+	std::cin>>wybrana1;
+	while ((wybrana1 < 1 ) || (wybrana1 > 49) )
+	{
+		cout<<"Liczba z poza zakresu, podaj jeszcze raz" <<endl;
+		std::cin>>wybrana1;
+	}
+	cout<<" Podaj 2 liczbe :"<<endl;
+	cin>>wybrana2;
+		while ((wybrana2 < 1 ) || (wybrana2 > 49) )
+	{
+		cout<<"Liczba z poza zakresu, podaj jeszcze raz" <<endl;
+		cin>>wybrana1;
+	}
+	if (wybrana1 == wybrana2)
+	{
+		while (wybrana1==wybrana2)
+		{
+			 
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana2;
+		}	
+	}
+	cout<<" Podaj 3 liczbe :"<<endl;
+	cin>>wybrana3;
+		while ((wybrana3 < 1 ) || (wybrana3 > 49) )
+	{
+		cout<<"Liczba z poza zakresu, podaj jeszcze raz" <<endl;
+		cin>>wybrana1;
+	}
+	if (wybrana1 == wybrana3)
+	{
+		while (wybrana1==wybrana3)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana3;
+		}
+		
+	}
+	if (wybrana2 == wybrana3)
+	{
+		while (wybrana2==wybrana3)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana3;
+		}
+		
+	}
+	cout<<" Podaj 4 liczbe :"<<endl;
+	cin>>wybrana4;
+		while ((wybrana1 < 1 ) || (wybrana1 > 49) )
+	{
+		cout<<"Liczba z poza zakresu, podaj jeszcze raz" <<endl;
+		cin>>wybrana4;
+	}
+	if (wybrana1 == wybrana4)
+	{
+		while (wybrana1==wybrana4)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana4;
+		}
+		
+	}
+	if (wybrana2 == wybrana4)
+	{
+		while (wybrana2==wybrana4)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana4;
+		}
+		
+	}
+	if (wybrana3 == wybrana4)
+	{
+		while (wybrana3==wybrana4)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana4;
+		}
+		
+	}
+	cout<<" Podaj 5 liczbe :"<<endl;
+	cin>>wybrana5;
+		while ((wybrana5 < 1 ) || (wybrana5 > 49) )
+	{
+		cout<<"Liczba z poza zakresu, podaj jeszcze raz" <<endl;
+		cin>>wybrana5;
+	}
+	if (wybrana1 == wybrana5)
+	{
+		while (wybrana1==wybrana5)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana5;
+		}
+		
+	}
+	if (wybrana2 == wybrana5)
+	{
+		while (wybrana2==wybrana5)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana5;
+		}
+		
+	}
+	if (wybrana3 == wybrana5)
+	{
+		while (wybrana3==wybrana5)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana5;
+		}
+		
+	}
+	if (wybrana4== wybrana5)
+	{
+		while (wybrana4==wybrana5)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana5;
+		}
+		
+	}
+	
+		cout<<" Podaj 6 liczbe :"<<endl;
+	cin>>wybrana6;
+		while ((wybrana6 < 1 ) || (wybrana6 > 49) )
+	{
+		cout<<"Liczba z poza zakresu, podaj jeszcze raz" <<endl;
+		cin>>wybrana6;
+	}
+	if (wybrana1 == wybrana6)
+	{
+		while (wybrana1==wybrana6)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana6;
+		}
+		
+	}
+	if (wybrana2 == wybrana6)
+	{
+		while (wybrana2==wybrana6)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana6;
+		}
+		
+	}
+	if (wybrana3 == wybrana6)
+	{
+		while (wybrana3==wybrana6)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana6;
+		}
+		
+	}
+	if (wybrana4== wybrana6)
+	{
+		while (wybrana4==wybrana6)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana6;
+		}
+	}
+	if (wybrana5== wybrana6)
+	{
+		while (wybrana5==wybrana6)
+		{
+			 cout<<"podaj jeszcze raz "<<endl;
+			 cin>>wybrana6;
+		}
+	}
+	std::cout<<" twoje liczby to : " <<endl;
+	cout<<"  " <<wybrana1;
+	cout<<"  " <<wybrana2;
+	cout<<"  " <<wybrana3;
+	cout<<"  " <<wybrana4;
+	cout<<"  " <<wybrana5;
+	cout<<"  " <<wybrana6<<endl;
+	}
+	else if ( decyzja == 2 ) 
+		{
+	srand ( (unsigned int)time(NULL) );
+	chybil1 = rand()%49+1;
+	chybil2 = rand()%49+1;
+	if (chybil1 == chybil2)
+	{
+		while (chybil1==chybil2)
+		{
+			 chybil2 = rand()%49+1 ;
+		}
+	}
+	chybil3 = rand()%49+1;
+	if (chybil1 == chybil3)
+	{
+		while (chybil1==chybil3)
+		{
+			 chybil3 = rand()%49+1 ;
+		}
+		
+	}
+	if (chybil2 == chybil3)
+	{
+		while (chybil2==chybil3)
+		{
+			 chybil3 = rand()%49+1 ;
+		}
+		
+	}
+
+	
+	chybil4 = rand()%49+1; //losowanie 4 liczby 
+	if (chybil1 == chybil4)
+	{
+		while (chybil1==chybil4)
+		{
+			 chybil4 = rand()%49+1 ;
+		}
+		
+	}
+	if (chybil2	 == chybil4)
+	{
+		while (chybil2==chybil4)
+		{
+			 chybil4 = rand()%49+1 ;
+		}
+		
+	}
+	if (chybil3 == chybil4)
+	{
+		while (chybil3==chybil4)
+		{
+			 chybil4 = rand()%49+1 ;
+		}
+		
+	}
+	
+	chybil5 = rand()%49+1;
+	if (chybil1 == chybil5)
+	{
+		while (chybil1==chybil5)
+		{
+			 chybil5 = rand()%49+1 ;
+		}
+		
+	}
+		if (chybil2 == chybil5)
+	{
+		while (chybil2==chybil5)
+		{
+			 chybil5 = rand()%49+1 ;
+		}
+	}
+		if (chybil3 == chybil5)
+	{
+		while (chybil3==chybil5)
+		{
+			 chybil5 = rand()%49+1 ;
+		}
+	}
+		if (chybil4 == chybil5)
+	{
+		while (chybil4==chybil5)
+		{
+			 chybil5 = rand()%49+1 ;
+		}
+	}
+	chybil6 = rand()%49+1; // losowanie 6 
+	if (chybil1 == chybil6)
+	{
+		while (chybil1==chybil6)
+		{
+			 chybil6 = rand()%49+1 ;
+		}
+	}
+	if (chybil2 == chybil6)
+	{
+		while (chybil2==chybil6)
+		{
+			 chybil6 = rand()%49+1 ;
+		}
+	}
+	if (chybil3 == chybil6)
+	{
+		while (chybil3 ==chybil6)
+		{
+			 chybil6 = rand()%49+1 ;
+		}
+	}
+	if (chybil4 == chybil6)
+	{
+		while (chybil4 ==chybil6)
+		{
+			 chybil6 = rand()%49+1 ;
+		}
+	}
+	if (chybil5 == chybil6)
+	{
+		while (chybil5 ==chybil6)
+		{
+			 chybil6 = rand()%49+1 ;
+		}
+	}
+	cout<<" twoje liczby to : " <<endl;
+	cout<<"  " <<chybil1;
+	cout<<"  " <<chybil2;
+	cout<<"  " <<chybil3;
+	cout<<"  " <<chybil4;
+	cout<<"  " <<chybil5;
+	cout<<"  " <<chybil6<<endl;
+		}
+	
+	cout<<"Ok teraz czekaj na losowanie"<<endl;
+	Sleep(3000);
+
+	//int wylosowane[6];
+	//srand ( (unsigned int)time(NULL) );
+	int liczba1 = rand()%49+1;
+	Sleep(1000);
+	cout<<"\a";
+	cout<<liczba1<<"  ";
+	int liczba2 = rand()%49+1;
+	
+	if (liczba1 == liczba2)
+	{
+		while (liczba1==liczba2)
+		{
+			 liczba2 = rand()%49+1 ;
+		}
+		
+	}
+	cout<<liczba2<<"  ";
+	Sleep(1000);
+	cout<<"\a";
+	int liczba3 = rand()%49+1;
+	if (liczba1 == liczba3)
+	{
+		while (liczba1==liczba3)
+		{
+			 liczba3 = rand()%49+1 ;
+		}
+		
+	}
+	if (liczba2 == liczba3)
+	{
+		while (liczba2==liczba3)
+		{
+			 liczba3 = rand()%49+1 ;
+		}
+		
+	}
+	cout<<liczba3<<"  ";
+	Sleep(1000);
+	cout<<"\a";
+	int liczba4 = rand()%49+1; //losowanie 4 liczby 
+	if (liczba1 == liczba4)
+	{
+		while (liczba1==liczba4)
+		{
+			 liczba4 = rand()%49+1 ;
+		}
+		
+	}
+	if (liczba2 == liczba4)
+	{
+		while (liczba2==liczba4)
+		{
+			 liczba4 = rand()%49+1 ;
+		}
+		
+	}
+	if (liczba3 == liczba4)
+	{
+		while (liczba3==liczba4)
+		{
+			 liczba4 = rand()%49+1 ;
+		}
+		
+	}
+	cout<<liczba4<<"  ";
+	Sleep(1000);
+	cout<<"\a";
+	int liczba5 = rand()%49+1;
+		if (liczba1 == liczba5)
+	{
+		while (liczba1==liczba5)
+		{
+			 liczba5 = rand()%49+1 ;
+		}
+		
+	}
+		if (liczba2 == liczba5)
+	{
+		while (liczba2==liczba5)
+		{
+			 liczba5 = rand()%49+1 ;
+		}
+	}
+		if (liczba3 == liczba5)
+	{
+		while (liczba3==liczba5)
+		{
+			 liczba5 = rand()%49+1 ;
+		}
+	}
+		if (liczba4 == liczba5)
+	{
+		while (liczba4==liczba5)
+		{
+			 liczba5 = rand()%49+1 ;
+		}
+	}
+	cout<<liczba5<<"  ";
+	Sleep(1000);
+	cout<<"\a";
+	int liczba6 = rand()%49+1; // losowanie 6 
+	if (liczba1 == liczba6)
+	{
+		while (liczba1==liczba6)
+		{
+			 liczba6 = rand()%49+1 ;
+		}
+	}
+	if (liczba2 == liczba6)
+	{
+		while (liczba2==liczba6)
+		{
+			 liczba6 = rand()%49+1 ;
+		}
+	}
+	if (liczba3 == liczba6)
+	{
+		while (liczba3 ==liczba6)
+		{
+			 liczba6 = rand()%49+1 ;
+		}
+	}
+	if (liczba4 == liczba6)
+	{
+		while (liczba4 ==liczba6)
+		{
+			 liczba6 = rand()%49+1 ;
+		}
+	}
+	if (liczba5 == liczba6)
+	{
+		while (liczba5 ==liczba6)
+		{
+			 liczba6 = rand()%49+1 ;
+		}
+	}
+	cout<<liczba6<<"  ";
+	Sleep(1000);
+	cout<<"\a";
+	cout<<endl;
+	cout<<" wylosowane liczby to : " <<endl;
+	cout<<"  " <<liczba1;
+	cout<<"  " <<liczba2;
+	cout<<"  " <<liczba3;
+	cout<<"  " <<liczba4;
+	cout<<"  " <<liczba5;
+	cout<<"  " <<liczba6<<endl;
+
+	int tablica[6] ;
+	tablica[0] = liczba1;
+	tablica[1] = liczba2;
+	tablica[2] = liczba3;
+	tablica[3] = liczba4;
+	tablica[4] = liczba5;
+	tablica[5] = liczba6;
+	if (decyzja == 1 )
+	{
+		for (int i = 0; i < 6; i++)
+		{
+			if ((tablica[i] == wybrana1) || (tablica[i] == wybrana2) ||  (tablica[i] == wybrana3) || (tablica[i] == wybrana4) || (tablica[i] == wybrana5) || (tablica[i] == wybrana6) )
+			{
+				licznik++;
+			}
+		}
+		cout<<"Liczba trafien : "<<licznik<<"/6"<<endl;
+	}
+	if (decyzja == 2)
+	{
+			for (int i = 0; i < 6; i++)
+		{
+			if ((tablica[i] == chybil1) || (tablica[i] == chybil2) ||  (tablica[i] == chybil3) || (tablica[i] == chybil4) || (tablica[i] == chybil5) || (tablica[i] == chybil6) )
+			{
+				licznik++;
+			}
+		}
+		cout<<"Liczba trafien : "<<licznik<<"/6"<<endl;
+	}
+	cin.get();
+	cin.get();
+
+	return 0;
+}
