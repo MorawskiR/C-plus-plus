@@ -1,0 +1,164 @@
+//5
+
+
+
+#include "stdafx.h"
+#include <iostream>
+#include <windows.h>
+#include <string>
+using namespace std;
+
+
+int main() {
+	int miesiace1 = 12;
+	int dane = 1 ;
+	int sprzedac[1][12];
+	int suma = 0;
+	string Miesiace[12];
+
+	for (int i = 0; i < miesiace1; i++)
+	{
+		cout << "Podaj " << i + 1 << " miesiac: ";
+		cin>> Miesiace[i];
+	}
+
+
+	for (int i = 0; i < dane; i++)
+	{
+		for (int j = 0; j < miesiace1 ; j++)
+		{
+
+			cout << "Dane za miesiac " << Miesiace[j]<<": ";
+			cin >> sprzedac[i][j];
+			suma = suma + sprzedac[i][j];
+		}
+	}
+	cout << "Suma sprzedazy lacznie za rok: " << suma << endl;
+
+	return 0;
+}
+
+//6 
+
+
+#include "stdafx.h"
+#include <iostream>
+#include <windows.h>
+#include <string>
+using namespace std;
+
+
+int main() {
+	int rok = 2017;
+	int miesiace1 = 12;
+	int dane = 1;
+	int sprzedac[1][12];
+	int suma = 0;
+	int revenue = 0; 
+	string Miesiace[12];
+	Miesiace[0] = "styczen";
+	Miesiace[1] = "luty";
+	Miesiace[2] = "Marzec";
+	Miesiace[3] = "kwiecien";
+	Miesiace[4] = "Maj",
+		Miesiace[5] = "Czerwiec";
+	Miesiace[6] = "Lipiec";
+	Miesiace[7] = "sierpien";
+	Miesiace[8] = "wrzesien";
+	Miesiace[9] = "Pazdziernik";
+	Miesiace[10] = "Listopad";
+	Miesiace[11] = "Grudzien";
+
+
+	/* for (int i = 0; i < miesiace1; i++)
+	{
+	cout << Miesiace[i] << endl;
+	} */
+
+	for (int cz = 0; cz < 3; cz++)
+	{
+
+
+		for (int i = 0; i < dane; i++)
+		{
+			for (int j = 0; j < miesiace1; j++)
+			{
+
+				cout << "Dane za miesiac " << Miesiace[j] << " rok " << rok << ": ";
+				cin >> sprzedac[i][j];
+				suma = suma + sprzedac[i][j];
+			}
+		}
+		cout << endl;
+		cout << "Suma sprzedazy lacznie za rok " << rok  << " : " << suma << endl;
+		cout << endl;
+		revenue = revenue + suma; 
+		rok++;
+		suma = 0;
+	}
+	
+	cout << endl;
+	cout << "laczny przychod z 3 lat : " << revenue << endl; 
+
+	return 0;
+}
+//8
+
+	int i = 0;
+	char dane[250] = "";
+	while (strcmp(dane, "gotowe")) 
+	{
+		cin >> dane;
+		++i;
+	}
+	cout << "Wcztano: " << i -1 << " znakow";
+	cout << endl;
+
+//9
+#include "stdafx.h"
+#include <iostream>
+#include <windows.h>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string slowo;
+	int licznik = 0;
+	char word[7];
+	cin >> slowo;
+	while (slowo != "gotowe")
+	{
+		licznik++;
+		cout << slowo << " ";
+		cin >> slowo;
+		
+		
+	}
+	cout << endl;
+	cout << "Wcztano: " << licznik << " znakow";
+	cout << endl;
+	return 0;
+}
+
+//10 
+	int liczba_wierszy; 
+	cout << "Podaj liczbe wierszy: ";
+	cin >> liczba_wierszy;
+	int c = liczba_wierszy;
+	for (int i = 0; i < liczba_wierszy; i++)
+	{
+		for (int j = 0; j < liczba_wierszy; j++)
+		{
+			if (j >= c - 1)
+			{
+				cout << "*";
+			}
+			else
+			{
+				cout << ".";
+			}
+		}
+		c--;
+		cout << endl;
+	}
