@@ -1,0 +1,25 @@
+#include <iostream>
+#include "event.h"
+using namespace std;
+
+class Zeszyt
+{
+public :
+ int kartki;
+ string kolor;
+ string srodek;
+public:
+    Zeszyt(int n = 100, string k ="dsads",string s  ="sds"){
+        kartki = n;
+        kolor = k;
+        srodek = s;
+    }
+};
+
+int main()
+{
+  Zeszyt z1;
+  cout<<z1.kartki;
+  cout<<z1.srodek;
+  return 0;
+}
