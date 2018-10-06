@@ -1,0 +1,60 @@
+// main.cpp
+#include <iostream>
+#include "event.h"
+using namespace std;
+
+int main()
+{
+
+Zeszyt z1;
+z1.show();
+  return 0;
+}
+
+// deklaracja klasy i atrybutów 
+#include <iostream>
+
+using namespace std;
+
+class Zeszyt {
+
+ int kartki;
+ string srodek;
+ string kolor;
+
+ public:
+     Zeszyt(int = 1, string = "sdas", string = "sdasda");
+     ~Zeszyt();
+     void load();
+     void show();
+
+};
+
+
+// deklaracja klasy 
+#include <iostream>
+#include "event.h"
+using namespace std;
+Zeszyt::Zeszyt(int n, string s, string k)
+{
+    kartki = n;
+    srodek = s;
+    kolor = k;
+}
+Zeszyt::~Zeszyt()
+{
+    cout<<"destruky";
+}
+void Zeszyt::load()
+{
+cin>>kartki;
+cin>>srodek;
+cin>>kolor;
+
+}
+void Zeszyt::show()
+{
+cout<<kartki<<" stron"<<endl;
+cout<<srodek<<" w srodku " <<endl;
+cout<<kolor <<" kolor okladki"<<endl;
+}
