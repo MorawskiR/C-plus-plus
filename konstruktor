@@ -9,7 +9,7 @@ public :
  string kolor;
  string srodek;
 public:
-    Zeszyt(int n = 100, string k ="dsads",string s  ="sds"){
+    Zeszyt(int n = 100, string k ="zolty",string s  ="kratka"){
         kartki = n;
         kolor = k;
         srodek = s;
@@ -19,7 +19,8 @@ public:
 int main()
 {
   Zeszyt z1;
-  cout<<z1.kartki;
-  cout<<z1.srodek;
+  cout<<z1.kartki<<" stron"<<endl;
+  cout<<z1.srodek<<" w srodku " <<endl;
+  cout<<z1.kolor <<" kolor okladki"<<endl;
   return 0;
 }
