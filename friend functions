@@ -1,0 +1,81 @@
+#include <iostream>
+
+using namespace std;
+class Operacja;
+class Bankomat{
+
+int saldo;
+string nazwa;
+
+public :
+    Bankomat(int = 300, string = "dupa");
+    void wczytaj();
+    friend void sedzia(Bankomat &ban, Operacja &opr);
+};
+
+class Operacja{
+string nazwa;
+int kwota;
+public:
+Operacja(string = "brak", int = 200);
+void wczytaj();
+friend void sedzia(Bankomat &ban, Operacja &opr);
+};
+
+#include <iostream>
+#include "friend.h"
+using namespace std;
+
+Bankomat::Bankomat(int n,string k )
+{
+    saldo = n;
+    nazwa = k;
+}
+void Bankomat::wczytaj()
+{
+    cout<<"Podaj saldo" ;
+    cin>>saldo;
+    cout<<"Podaj nazwe" ;
+    cin>>nazwa;
+}
+Operacja::Operacja(string z, int p)
+{
+    nazwa = z;
+    kwota = p;
+}
+void Operacja::wczytaj()
+{
+   /* cout<<"Podaj nazwa" ;
+    cin>>nazwa;
+    cout<<"Podaj kwote" ;
+    cin>>kwota; */
+    cout<<"nazwa obiektu"<<nazwa;
+}
+//main 
+#include <iostream>
+#include "friend.h"
+using namespace std;
+
+void sedzia(Bankomat &ban, Operacja &opr)
+{
+   opr.nazwa="Podmiana";
+
+if(ban.saldo > opr.kwota)
+{
+    cout <<"ready";
+}
+else{
+    cout<<"nie masz hajsu plebsie"<<endl;
+}
+}
+int main()
+{
+  Bankomat b1(100,"dpa");
+  //b1.wczytaj();,
+
+  Operacja o1("sdas",30);
+  sedzia(b1,o1);
+   o1.wczytaj();
+    return 0;
+}
+
