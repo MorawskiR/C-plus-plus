@@ -1,62 +1,44 @@
 #include <iostream>
-
 using namespace std;
-class Operacja;
-class Bankomat{
 
+class Operacja;
+
+class Bankomat{
 int saldo;
 string nazwa;
-
 public :
-    Bankomat(int = 300, string = "dupa");
-    void wczytaj();
-    friend void sedzia(Bankomat &ban, Operacja &opr);
+    Bankomat(int n, string k){
+    saldo = n;
+    nazwa = k;
+    }
+    void wczytaj()
+    {
+    cout<<"Podaj saldo" ;
+    cin>>saldo;
+    cout<<"Podaj nazwe" ;
+    cin>>nazwa;
+    }
+    friend void sedzia(Bankomat ban, Operacja opr);
 };
 
 class Operacja{
 string nazwa;
 int kwota;
 public:
-Operacja(string = "brak", int = 200);
-void wczytaj();
-friend void sedzia(Bankomat &ban, Operacja &opr);
-};
-
-#include <iostream>
-#include "friend.h"
-using namespace std;
-
-Bankomat::Bankomat(int n,string k )
-{
-    saldo = n;
-    nazwa = k;
-}
-void Bankomat::wczytaj()
-{
-    cout<<"Podaj saldo" ;
-    cin>>saldo;
-    cout<<"Podaj nazwe" ;
-    cin>>nazwa;
-}
-Operacja::Operacja(string z, int p)
+Operacja(string z, int p)
 {
     nazwa = z;
     kwota = p;
 }
-void Operacja::wczytaj()
-{
-   /* cout<<"Podaj nazwa" ;
+void wczytaj(){
+cout<<"Podaj nazwa" ;
     cin>>nazwa;
     cout<<"Podaj kwote" ;
-    cin>>kwota; */
-    cout<<"nazwa obiektu"<<nazwa;
-}
-//main 
-#include <iostream>
-#include "friend.h"
-using namespace std;
+    cin>>kwota;}
+friend void sedzia(Bankomat ban, Operacja opr);
+};
 
-void sedzia(Bankomat &ban, Operacja &opr)
+void sedzia(Bankomat ban, Operacja opr)
 {
    opr.nazwa="Podmiana";
 
