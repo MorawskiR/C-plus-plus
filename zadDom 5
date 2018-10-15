@@ -23,7 +23,8 @@ public:
  
 class Kolo :public Punkt //klasa Kolo dziedziczy publicznie z klasy Punkt
 {
-   float r;
+  protected:
+  float r;
    string nazwa;
  
 public:
@@ -43,17 +44,17 @@ public:
       r = pr;
    }
 };
- Class Kula : public Kolo
+ class Kula :protected Kolo
  {
-     string nazwa ;
+     string nazwa;
+     public:
      void wyswietl()
      {
-         
-         Kolo::wyswietl();
-         cout<<"cout<<"kula o nazwie: "<<nazwa<<endl;
-         cout<<"objetosc kuli " << 4/3 * M_PI * r*r*r<<endl;
+         cout<<"cout"<<"kula o nazwie: "<<nazwa<<endl;
+           Kolo::wyswietl();
+         cout<<"objetosc kuli "<< 4/3 * M_PI * r*r*r<<endl;
      }
-    Kula(string ku="kulka",string nk="Kolko", string np="S", float a=0, float b=0, float pr=1)
+    Kula(string ku="kulka",string nk="Kolko", string np="S", float a=0, float b=0, float pr=5)
     :Kolo(np,np,a,b,pr)
         {
             nazwa = ku;
@@ -62,7 +63,7 @@ public:
  };
 int main()
 {
-    Kolo k1;
+    Kula k1;
     k1.wyswietl();
  
     return 0;
