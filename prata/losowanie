@@ -2,32 +2,48 @@
 #include <iostream>
 #include <string>
 using namespace std;
-void fukcja(int, int);
+int fukcja(int z, int k);
 int main()
 {
-    int a;
-    int b;
-cout<<"liczba liczb" <<  endl;
-a = 10 ; 
-cout<<"losowane liczby" << endl;
-b = 10 ; 
+int a = 49;
+int b = 6;
 
-fukcja(a,b);
+//cout<<"losowane liczby" << endl;
+
+
+int k = fukcja(a,b);
+cout<<k;
 
 return 0;
 }
 
 
-void fukcja(int z , int k)
+int fukcja(int z , int k)
 {
-    int los = z ;// 10
-    int los1 = k; //4
-    int temp = z ;// 10 
-    long int suma ;
-cout<<"sdsd";
-for (int i = 1; i=los1;i++)
+   long int los = z ;// 10
+   long int los1 = k; //4
+   long int temp = 1;
+   long int dzielenie = los - los1;
+    long int suma = 1;
+   long int odejmowanie = 1 ;
+
+for (int i = 1; i <= los; i++) // silnia 
 {
-        suma = i;
+        suma *= i;
 }
-cout<<suma;
+
+for (int i = 1; i <= los1; i++) // silnia 
+{
+        temp *= i;
+}
+
+
+
+for (int i = 1; i <= dzielenie; i++) //  
+{
+        odejmowanie *= i;
+}
+
+int wynik = suma / (temp - odejmowanie);
+return wynik;
 }
