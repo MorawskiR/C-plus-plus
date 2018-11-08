@@ -1,0 +1,33 @@
+// Example program
+#include <iostream>
+#include <string>
+using namespace std;
+void fukcja(int, int);
+int main()
+{
+    int a;
+    int b;
+cout<<"liczba liczb" <<  endl;
+a = 10 ; 
+cout<<"losowane liczby" << endl;
+b = 10 ; 
+
+fukcja(a,b);
+
+return 0;
+}
+
+
+void fukcja(int z , int k)
+{
+    int los = z ;// 10
+    int los1 = k; //4
+    int temp = z ;// 10 
+    long int suma ;
+cout<<"sdsd";
+for (int i = 1; i=los1;i++)
+{
+        suma = i;
+}
+cout<<suma;
+}
