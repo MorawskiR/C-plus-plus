@@ -5,28 +5,24 @@ using namespace std;
 int fukcja(int z, int k);
 int main()
 {
-int a = 49;
-int b = 6;
-
-//cout<<"losowane liczby" << endl;
-
+int a = 10;
+int b = 4;
+int los = 49 ;
 
 int k = fukcja(a,b);
-cout<<k;
+cout<<"1 do " << k;
 
 return 0;
 }
-
-
 int fukcja(int z , int k)
 {
    long int los = z ;// 10
    long int los1 = k; //4
-   long int temp = 1;
-   long int dzielenie = los - los1;
-    long int suma = 1;
-   long int odejmowanie = 1 ;
-
+    unsigned long temp = 1;
+   long int dzielenie = 1;
+   long int odejmowanie;
+   unsigned long  suma = 1;
+  //int wynik = 0;
 for (int i = 1; i <= los; i++) // silnia 
 {
         suma *= i;
@@ -36,14 +32,13 @@ for (int i = 1; i <= los1; i++) // silnia
 {
         temp *= i;
 }
+odejmowanie = los - los1; 
 
-
-
-for (int i = 1; i <= dzielenie; i++) //  
+for (int i = 1; i <= odejmowanie; i++) //  
 {
-        odejmowanie *= i;
+        dzielenie *= i;
 }
-
-int wynik = suma / (temp - odejmowanie);
+//
+unsigned int wynik = suma / (temp * dzielenie);
 return wynik;
 }
