@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+long double fukcja(unsigned z, unsigned k);
+int main()
+{
+double a ;
+double b = 4;
+
+
+cout<<"druga" <<endl;
+
+while((cin >> a>>b )&&  b <= a )
+{
+    cout<<"szanse to : ";
+    cout<<fukcja(a,b);
+    cout<<"nastepne liczby: q konczy ";
+}
+cout<<"dowidzenia" ;
+return 0;
+}
+long double fukcja(unsigned numbers , unsigned picks)
+{
+   long double result = 1.0 ;// 10.
+long double n;
+unsigned p;
+for(n = numbers, p = picks; p>0; n--,p--)
+    result = result * n/p;
+return result;
+}
