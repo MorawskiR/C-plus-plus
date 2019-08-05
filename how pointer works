@@ -1,0 +1,31 @@
+// Example program
+#include <iostream>
+#include <string>
+int a = 50;
+int wskaznik(int *a);
+int brak_wskaznika(int a);
+
+int main()
+{
+
+
+
+wskaznik(&a);
+
+std::cout<<a;
+brak_wskaznika(a);
+std::cout<<a;
+}
+int wskaznik(int *a)
+{
+    int b = 10;
+    *a = b;
+    return *a;
+}
+
+int brak_wskaznika(int a)
+{
+    int b = 30;
+    a = b; 
+    return b;
+}
