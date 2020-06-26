@@ -1,0 +1,13 @@
+    int  height ;
+    int weight;
+    float heightM;
+   std::cout << "Height (cm)" << std::endl;
+   std::cin >> height;
+   std::cout << "Weight (kg)" << std::endl;
+   std::cin >> weight;
+ 
+    float heightF = (float)height;
+    float weightF = (float)weight;
+
+    float BMI = (weightF / (heightF * heightF)) * 10000;
+    std::cout<<"BMI:" <<BMI;
