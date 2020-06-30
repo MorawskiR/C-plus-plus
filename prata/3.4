@@ -1,0 +1,18 @@
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+
+    long long int time = 31600000;
+
+    cout << time / 86400 << " = dni, ";
+    time = time % 86400;
+    cout << time / 3600 << " = sekund, ";
+    time = time % 3600;
+    cout << time / 60 << " = minut, ";
+    time = time % 60;
+    cout << time << " = sekund" << endl;
+        
+}
