@@ -1,0 +1,28 @@
+
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <cctype>
+#include <array>
+using namespace std;
+int main()
+{
+    int i = 0;
+    char c;
+    char table[] = "LOWER.UPPER333";
+    while (table[i])
+    {
+        c = table[i];
+        if ((!isdigit(c)) && (isalpha(c)))
+        {
+            if (islower(c))
+            {
+                c = toupper(c);
+            }
+            else c = tolower(c);
+            cout << c;
+        }
+    
+        i++;
+    }
+}
