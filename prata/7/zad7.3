@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <array>
+using namespace std;
+const int wielkosc = 5;
+void estimate(int ar[], int n, int value);
+int main()
+{
+int tab[wielkosc] = {0,0,0,0,0};
+int p = 10;
+estimate(tab,wielkosc,p);
+    for (int i = 0; i <wielkosc ; ++i) 
+    {
+        cout<<tab[i]<<endl;
+    }
+}
+void estimate(int ar[], int n, int value)
+{
+    for (int i = 0; i < n; ++i) {
+        ar[i] = value;
+        cout<<ar[i];
+    }
+}
