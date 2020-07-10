@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <array>
+using namespace std;
+const int Size= 5;
+void funkcja( double * begin,  double * end);
+int main()
+{
+    int c = 8;
+    double tablica[Size] = {2.1,2.2,3.0,2.3,2.8};
+    funkcja(tablica,tablica+Size);
+
+}
+void funkcja( double * begin,  double * end)
+{
+    double * pt;
+    double * high = begin;
+    for (pt = begin +1 ; pt != end ; pt++) {
+        if(*pt > *high)
+        {
+            *high = *pt;
+        }
+    }
+    cout<<*high;
+
+}
