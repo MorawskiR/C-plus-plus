@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <array>
+using namespace std;
+const int Seasons = 4;
+const array<string, Seasons> Sname = {"wiosna", " lato", "jesien", "zima"};
+void fill(array<double, Seasons> * pa);
+int main() {
+    array<double, Seasons> expenses;
+    fill(&expenses);
+    cout<<expenses[0];
+}
+void fill(array<double, Seasons> * pa)
+{
+    for (int i = 0; i < Seasons; ++i) {
+        cout<<"okres : "<<Sname[i] <<" :";
+        cin>>(*pa)[i];
+    }
+}
