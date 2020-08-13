@@ -1,0 +1,16 @@
+#include <array>
+#include <stdlib.h>
+using namespace std;
+const double * f1(const double ar[], int n);
+
+
+int main()
+{
+    double av[3] = { 2.5, 3.5, 4.5 };
+    const double *(*p1)(const double *, int ) = f1;
+    cout<<(*p1)(av,3)<<" "<<*(*p1)(av,3);
+}
+const double * f1(const double ar[], int n)
+{
+    return  ar;
+}
