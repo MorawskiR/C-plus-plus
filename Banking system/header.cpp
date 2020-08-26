@@ -1,5 +1,7 @@
 #include "Nagłówek.h"
 using namespace std;
+#include <stdlib.h>
+#include "windows.h" 
 #include <vector>
 #include <list>
 char wybor;
@@ -37,6 +39,7 @@ void MainMenu()
 	cout << "3. Deposit" << endl;
 	cout << "4. Remove account  " << endl;
 	cout << "5. Add Record " << endl;
+	cout << "6. Exit " << endl;
 }
 void DisplayList()
 {
@@ -54,7 +57,40 @@ void DisplayList()
 }
 void Withdraw()
 {
-	cout << "a";
+	DisplayList();
+	cout << "Which account whould you like to withdraw ? " << endl;
+	int size = Rekordy.size();
+	cout << "choose from 1 to " << size << "." << endl;
+	cin >> wybor;
+	switch (wybor)
+	{
+	case '1':
+		cout << "Balance is " << Rekordy[0].saldo << ", write how much to withdraw: " << endl;
+		cin >> NewSaldo; 
+		while (NewSaldo > Rekordy[0].saldo)
+		{
+			cout << "Za duza wartosc, nie ma tyle środkow. Podaj ponownie: " << endl;
+			cin >> NewSaldo;
+		}
+		Rekordy[0].saldo = Rekordy[0].saldo - NewSaldo;
+		break;
+	case '2':
+		cout << "Balance is " << Rekordy[1].saldo << ", write how much to withdraw " << endl;
+
+		cin >> NewSaldo; 
+		while (NewSaldo > Rekordy[1].saldo)
+		{
+			cout << "Za duza wartosc, nie ma tyle środkow. Podaj ponownie: " << endl;
+			cin >> NewSaldo;
+		}
+		Rekordy[1].saldo = Rekordy[1].saldo - NewSaldo;
+		break;
+	default:
+		break;
+	}
+	cout << "Rekord " << wybor << " updated. Choose next step. Back to menu now.  \n";
+	Sleep(1000);
+	system("cls");
 	
 }
 void EditName()
@@ -77,11 +113,33 @@ void EditName()
 	default:
 		break;
 	}
-
+	cout << "Rekord " << wybor << " updated. Choose next step. \n";
+	Sleep(1000);
+	system("cls");
 }
 void Deposit() {
-	cout << "Depo";
+	DisplayList();
 	
+	cout << "Which rekord whould you like to deposit ? " << endl;
+	int size = Rekordy.size();
+	cout << "choose from 1 to " << size << "." << endl;
+	cin >> wybor;
+	switch (wybor)
+	{
+	case '1':
+		cout << "Balance is " << Rekordy[0].saldo << ", write adding sum: " << endl;
+		cin >> NewSaldo; 
+		Rekordy[0].saldo = Rekordy[0].saldo + NewSaldo;
+		break;
+	case '2':
+		cout << "Balance is " << Rekordy[1].saldo << ", write adding sum: " << endl;
+		cin >> NewSaldo; 
+		Rekordy[1].saldo = Rekordy[1].saldo + NewSaldo;
+		break;
+	default:
+		break;
+	}
+	cout << "Rekord " << wybor << " updated. Choose next step. \n";
 }
 void RemoveAccount() {
 	cout << "remove account";
@@ -109,6 +167,9 @@ void menuwybor(char wybor2) {
 		break;
 	case '5':
 		AddRecord();
+		break;
+	case '6' :
+		exit(0);
 		break;
 	default:
 		break;
