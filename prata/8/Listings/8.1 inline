@@ -1,0 +1,20 @@
+
+
+#include <iostream>
+inline double square(double x);  
+int main()
+{
+    double a, b;
+    double c = 13.0;
+
+    a = square(9);
+    b = square(4.5 + 7.5);
+
+    std::cout << "a = " << a << ", b = " << b << " \n";
+    std::cout << "c= " << c;
+    std::cout << ", kwadrat = " << square(c++) << std::endl;
+    std::cout << "Teraz c = " << c <<std::endl;
+
+}
+
+inline double square(double x) { return x * x; }
