@@ -140,14 +140,50 @@ void Deposit() {
 		break;
 	}
 	cout << "Rekord " << wybor << " updated. Choose next step. \n";
+	Sleep(1000);
+	system("cls");
 }
 void RemoveAccount() {
-	cout << "remove account";
-	
+	cout << "Removing account, Minium number off account is one. You cannot delete more." << endl;
+	DisplayList();
+
+	cout << "Which rekord whould you like to remove ? " << endl;
+	int size = Rekordy.size();
+	cout << "choose from 1 to " << size << "." << endl;
+	cin >> wybor;
+	switch (wybor)
+	{
+	case '1':
+		Rekordy.erase(Rekordy.begin());
+		break;
+	case '2':
+		Rekordy.erase(Rekordy.begin() + (- wybor)   );
+		break;
+	case '3':
+		Rekordy.erase(Rekordy.begin() - wybor );
+		break;
+	case '4':
+		Rekordy.erase(Rekordy.begin() - wybor );
+		break;
+	default:
+		break;
+	}
+	cout << "Rekord " << wybor << " updated. Choose next step. \n";
+	Sleep(1000);
+	system("cls");
 }
 void AddRecord() {
 	cout << "Add record";
-	MainMenu();
+	int size = Rekordy.size();
+	cout << size;
+	cout << "Podaj nazwe uzytkownika konta: " << endl;
+	cin >> NewName;
+	cout << "Podaj nazwe saldo poczatkowe: " << endl;
+	cin >> NewSaldo;
+	Rekord nowyRekord = { size + 1 ,NewName,NewSaldo };
+	Rekordy.push_back(nowyRekord);
+	Sleep(1000);
+	system("cls"); 
 }
 void menuwybor(char wybor2) {
 	switch (wybor2)
