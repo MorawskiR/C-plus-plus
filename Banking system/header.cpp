@@ -11,13 +11,12 @@ string NewName;
 double NewSaldo;
 
 struct Rekord {
-	int AccNo;
 	string name;
 	double saldo;
 };
 
-Rekord rekord1 = { 1,"Marian", 100.90 };
-Rekord rekord2 = { 2,"Kokos", 500.50 };
+Rekord rekord1 = { "Marian", 100.90 };
+Rekord rekord2 = { "Kokos", 500.50 };
 
 vector<Rekord> Rekordy = { rekord1,rekord2 };
 void MainMenu()
@@ -30,7 +29,7 @@ void MainMenu()
 		int k = Rekordy.size();
 		for (int i = 0; i < k; i++)
 		{
-			cout << Rekordy[i].AccNo << "\t"<< Rekordy[i].name << "\t"<<Rekordy[i].saldo << "\n";
+			cout << i+1 <<"\t"<< Rekordy[i].name << "\t"<<Rekordy[i].saldo << "\n";
 		}
 		cout << endl;
 	}
@@ -50,7 +49,7 @@ void DisplayList()
 		int k = Rekordy.size();
 		for (int i = 0; i < k; i++)
 		{
-			cout << Rekordy[i].AccNo << "\t" << Rekordy[i].name << "\t" << Rekordy[i].saldo << "\n";
+			cout << i + 1 << "\t" << Rekordy[i].name << "\t" << Rekordy[i].saldo << "\n";
 		}
 		cout << endl;
 	}
@@ -119,7 +118,6 @@ void EditName()
 }
 void Deposit() {
 	DisplayList();
-	
 	cout << "Which rekord whould you like to deposit ? " << endl;
 	int size = Rekordy.size();
 	cout << "choose from 1 to " << size << "." << endl;
@@ -144,43 +142,34 @@ void Deposit() {
 	system("cls");
 }
 void RemoveAccount() {
-	cout << "Removing account, Minium number off account is one. You cannot delete more." << endl;
-	DisplayList();
 
-	cout << "Which rekord whould you like to remove ? " << endl;
-	int size = Rekordy.size();
-	cout << "choose from 1 to " << size << "." << endl;
-	cin >> wybor;
-	switch (wybor)
+	DisplayList();
+	cout << "podaj rekord do usuniecia" << endl;
+	cin >> key;
+	key = key - 1;
+	if (key == 0 )
 	{
-	case '1':
 		Rekordy.erase(Rekordy.begin());
-		break;
-	case '2':
-		Rekordy.erase(Rekordy.begin() + (- wybor)   );
-		break;
-	case '3':
-		Rekordy.erase(Rekordy.begin() - wybor );
-		break;
-	case '4':
-		Rekordy.erase(Rekordy.begin() - wybor );
-		break;
-	default:
-		break;
 	}
-	cout << "Rekord " << wybor << " updated. Choose next step. \n";
+	else
+	{
+		Rekordy.erase(Rekordy.begin() + key);
+	}
+	
+	cout << "Rekord " << key << " updated. Choose next step. \n";
 	Sleep(1000);
 	system("cls");
 }
 void AddRecord() {
-	cout << "Add record";
+	DisplayList();
+	cout << "====Add record====" << endl;
 	int size = Rekordy.size();
-	cout << size;
+	
 	cout << "Podaj nazwe uzytkownika konta: " << endl;
 	cin >> NewName;
 	cout << "Podaj nazwe saldo poczatkowe: " << endl;
 	cin >> NewSaldo;
-	Rekord nowyRekord = { size + 1 ,NewName,NewSaldo };
+	Rekord nowyRekord = {NewName,NewSaldo };
 	Rekordy.push_back(nowyRekord);
 	Sleep(1000);
 	system("cls"); 
