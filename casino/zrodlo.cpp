@@ -3,6 +3,7 @@
 #include "Nagłówek.h"
 #include <windows.h>
 #include <cstdlib>
+#include <math.h>     
 #include <ctime>
 #include <iostream>
 using namespace std;
@@ -14,9 +15,25 @@ double bet;
 int wybor;
 int Usernumber;
 
+bool Namewalidation = false; 
+void czy_double(double x)
+{
+	cout << "dupa";//isnan(x);
+
+	//return true;
+/*/	if (isnan(x))
+	{
+		return true;
+	}
+
+	else
+	{
+		return false;
+	}*/
+}
 void intro() {
 	cout << "=================" << endl;
-	cout << "        Menu     " << endl;
+	cout << "       Menu      " << endl;
 	cout << "=================" << endl;
 }
 void payment() {
@@ -29,11 +46,18 @@ void payment() {
 void pobierzWartosci()
 {
 	//tu przydałby sie konstruktor 
-	cout << "podaj nick : ";
-	cin >> name;
+	cout << "podaj nick (nie moze zaczynac sie od cyfry i miec max 10 znakow) : ";
+	getline(cin, name);
+	while (isdigit(name[0]) || (name.length() >= 10 ))
+	{
+		cout << "próba nie udana. "; cout << "podaj nick (nie moze zaczynac sie od cyfry i miec max 10 znakow) : ";
+		getline(cin, name);
+	}
 	cout << "podaj depozyt : ";
-
-cin >> deposit;
+	cin >> deposit;
+	czy_double(deposit);
+	Sleep(1000);
+	system("CLS");
 }
 void trafienie()
 {
@@ -73,7 +97,7 @@ void dice()
 	cin >> Usernumber;
 
 	cout << "3. wait for number : ";
-	srand(time(0));
+	//srand(time(0));
 	random = (rand() % 10 + 1);
 	std::cout << random << std::endl;
 	if (Usernumber == random)
