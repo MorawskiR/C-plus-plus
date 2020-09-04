@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+#include <string>
+
+string version1(const string& s1, const string& s2);
+const string& version2(string& s1, const string& s2);
+const string& version3(string& s1, const string& s2);
+
+
+int main()
+{
+	string input;
+	string copy;
+	string result;
+
+	cout << "Podaj łańcuch:";
+	getline(cin, input);
+	copy = input;
+	cout << "Wprowadzamy łańcuch: " << input << endl;
+	result = version1(input, "****");
+	cout << "Lancuch po wzbogaceniu " << result << endl;
+	cout << "oryginalny lancuch: " << input << endl;
+
+	result = version2(input, "###");
+	cout << "Lancuch po wzbogaceniu " << result << endl;
+	cout << "oryginalny lancuch: " << input << endl;
+
+	cout << "przywrocenie orginalnego lancucha" << endl;
+	input = copy;
+	//result = version3(input, "@@@");
+	//cout << "Lancuch po wzbogaceniu: " << result << endl;
+	//cout << "Orginalny lancuch : " << input << endl;
+
+
+}
+
+string version1(const string& s1, const string& s2)
+{
+	string temp;
+	temp = s2 + s1 + s2;
+	return temp;
+}
+const string& version2(string& s1, const string& s2)
+{
+	s1 = s2 + s1 + s2;
+	return s1;
+}
+const string& version3(string& s1, const string& s2)
+{
+	string temp;
+	temp = s2 + s1 + s2;
+	return temp;
+}
