@@ -1,0 +1,35 @@
+
+#include <iostream>
+#include <string>
+#include <typeinfo>
+/* rozdział :
+inline, referencja, argumenty domyslne, przeciazenie*/
+
+using namespace std;
+template <typename T>
+void Swap(T& a, T& b);
+int main()
+{
+	int i = 10;
+	int j = 20;
+	cout << "i, j = " << i << ", " << j << ".\n";
+	cout << "Użycie funkcji z int " << endl;
+
+	Swap(i, j);
+	cout<<"teraz i, j = " << i << ", " << j << ".\n";
+
+	double x = 24.5;
+	double y = 81.7;
+	cout << " x, y = " << x << ", " << y << ".\n";
+	cout << "Użycie funkcji z double " << endl;
+	Swap(x, y);
+	cout << "teraz  x, y = " << x << ", " << y << ".\n";
+}
+template <typename T>
+void Swap(T& a, T& b)
+{
+	T temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
