@@ -1,0 +1,73 @@
+
+#include <iostream>
+#include <string>
+#include <typeinfo>
+/* rozdział :
+inline, referencja, argumenty domyslne, przeciazenie*/
+
+using namespace std;
+struct Job
+{
+	char name[40];
+	double salary;
+	int floor;
+};
+
+//szablon prototypu - ogólna
+template <typename T>
+void Swap(T &a, T &b);
+
+//jawna sprecjalizacja typu
+template <> void Swap<Job>(Job &j1, Job &j2);
+void Show(Job& j);
+
+int main()
+{
+	cout.precision(2);
+	cout.setf(ios::fixed, ios::floatfield);
+	int i = 10, j = 20;
+	cout << "i, j = " << i << ", " << j << ".\n";
+	cout << "uzycie generowanej przez kompilartoefunkcji zmieniajacej wartosci int" << endl;
+	Swap(i, j);
+	cout << "Teraz i, j = " << i << ", " << j << endl;
+	Job Sue = { "Susa Yaffee", 733.60, 7 };
+	Job Sidney = { "Sidney costam", 780.90, 9 };
+
+	cout << "przed zmiana struktur Job: " << endl;
+	Show(Sue);
+	Show(Sidney);
+
+	Swap(Sue, Sidney);
+	cout << "po zmianie struktur: " << endl;
+	
+	Show(Sue);
+	Show(Sidney);
+
+	cin.get();
+}
+
+template <typename T>
+void Swap(T &a, T &b)
+{
+	T temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+template <> void Swap(Job& j1, Job& j2)
+{
+	double t1;
+	int t2;
+	t1 = j1.salary;
+	//zmiana salary
+	j1.salary = j2.salary;
+	j2.salary = t1;
+	//zmiana floor
+	t2 = j1.floor;
+	j1.floor = j2.floor;
+	j2.floor = t2;
+}
+void Show(Job& j)
+{
+	cout << j.name << ": " << j.salary << " zl na pietrze " << j.floor << endl;
+}
