@@ -1,0 +1,22 @@
+
+#include <iostream>
+#include <string>
+#include <typeinfo>
+
+//void piosenka(const char* tytul, int razy);
+void piosenka(const char* tytul = "Spij aniele spij", int razy = 1);
+int main()
+{
+	const char tab[5] = "aaaa";
+	piosenka(tab,5);
+	piosenka(tab);
+	piosenka();
+}
+void piosenka(const char* tytul, int razy)
+{
+	for (int i = 0; i < razy; i++)
+	{
+		std::cout << tytul[i];
+	}
+	std::cout <<std::endl;
+}
