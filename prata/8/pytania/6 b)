@@ -1,0 +1,30 @@
+
+#include <iostream>
+#include <math.h>
+#include <string>
+#include <typeinfo>
+using namespace std;
+
+void repeat(int ile, char* napis);
+void repeat(int ile, string napis);
+void repeat(int ile, string napis= "its ok.");
+
+int main()
+{
+
+	repeat(10, "czuje sie super");
+	repeat(5);
+}
+void repeat(int ile, char* napis)
+{
+	for (int i = 0; i < ile; i++)
+	{
+		cout << napis[i];
+	}
+}
+void repeat(int ile, string napis) {
+	for (int i = 0; i < ile; i++)
+	{
+		cout << napis << endl;
+	}
+}
