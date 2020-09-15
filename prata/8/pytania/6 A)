@@ -1,0 +1,15 @@
+
+#include <iostream>
+#include <math.h>
+#include <string>
+#include <typeinfo>
+using namespace std;
+
+double masa(double gestosc, double objetosc = 1.0) {
+	return gestosc * objetosc;
+}
+
+int main()
+{
+	cout<<masa(15.5);
+}
