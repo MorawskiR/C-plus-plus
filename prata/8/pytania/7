@@ -1,0 +1,33 @@
+
+#include <iostream>
+#include <math.h>
+#include <string>
+#include <typeinfo>
+using namespace std;
+
+template <typename T>
+T funkcja(T a, T b);
+
+int main()
+{
+	int k = 5, c = 10;
+	cout<<funkcja(k, c);
+	cout << endl;
+	cout<<funkcja(3.5, 10.5);
+
+}
+template <typename T>
+T funkcja(T a, T b) 
+{
+	T kasztan;
+	if (a > b)
+	{
+		kasztan = a;
+	}
+	else
+	{
+		kasztan = b;
+	}
+	
+	return kasztan;
+}
