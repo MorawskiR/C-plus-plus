@@ -1,0 +1,23 @@
+
+#include <iostream>
+#include <math.h>
+#include <string>
+#include <typeinfo>
+using namespace std;
+
+int srednia(int a, int b);
+double srednia(double a, double b);
+
+int main()
+{
+	cout << srednia(3, 6) << endl;
+	cout<<srednia(3.0, 6.0);
+	
+}
+int srednia(int a, int b) {
+	return (a + b) / 2;
+}
+double srednia(double a, double b)
+{
+	return (a + b) / 2;
+}
