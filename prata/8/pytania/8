@@ -1,0 +1,47 @@
+
+#include <iostream>
+#include <math.h>
+#include <string>
+#include <typeinfo>
+using namespace std;
+struct Pudelko
+{
+	string producent;
+	float pojemnosc;
+};
+//template <typename T>
+template <class T>
+Pudelko funkcja(T&, T&);
+template <> Pudelko funkcja<Pudelko>(Pudelko& p1, Pudelko& p2);
+
+int main()
+{
+//	Pudelko pudlo1 = { "zagraniczne ", 1.1, 1.1, 1.1,1.1 };
+//	Pudelko pudlo2 = { "polskie ", 2.2, 2.2, 2.2,2.2 };
+	Pudelko sue = { "sue", 40.1 };
+	Pudelko sidnej = { "sidney", 5.1 };
+
+
+	cout << "wieksze nalezy do " << (funkcja(sue, sidnej)).producent << endl;
+	cout<<" i ma "<<(funkcja(sue, sidnej)).pojemnosc;
+	
+}
+
+template <> Pudelko funkcja<Pudelko>(Pudelko& p1, Pudelko& p2)
+{
+	Pudelko nowe;
+	
+	//nowe.producent = p1.producent + p1.producent;
+	if (p1.pojemnosc > p2.pojemnosc)
+	{
+		nowe.pojemnosc = p1.pojemnosc;
+		nowe.producent = p1.producent;
+	}
+	else
+	{
+		nowe.pojemnosc = p2.pojemnosc;
+		nowe.producent = p2.producent;
+	}
+
+	return nowe;
+}
