@@ -1,0 +1,41 @@
+
+#include <iostream>
+#include <string>
+#include <typeinfo>
+/* rozdział :
+inline, referencja, argumenty domyslne, przeciazenie*/
+
+using namespace std;
+
+const int ArSize = 5;
+template <typename T>
+T max5(T arr[])
+{
+	T temp;
+	temp = arr[0];
+	for (int i = 1; i < ArSize; i++)
+	{
+		if (arr[i] > temp )
+		{
+			temp = arr[i];
+		}
+	}
+	return temp;
+}
+
+int main()
+{
+	int TabInt[ArSize] = { 1,2,3,4,5 };
+	int TabInt2[ArSize] = { 5,4,3,2,1 };
+	int TabInt3[ArSize] = { 4,2,1,5,3 };
+
+	double Tabdouble[ArSize] = { 1.2, 3.3, 5.5, 6.9, 2.2 };
+
+	cout << max5(TabInt) << endl;
+	cout << max5(TabInt2) << endl;
+	cout << max5(TabInt3) << endl;
+	cout << max5(Tabdouble);
+
+
+}
+
