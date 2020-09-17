@@ -1,0 +1,35 @@
+
+#include <iostream>
+#include <math.h>
+#include <string>
+#include <typeinfo>
+using namespace std;
+
+struct Batonik 
+{
+	//const char brand[20];
+	const char* ptr;
+	double weight;
+	int calories;
+};
+
+void funkcja(Batonik &b1, const char* n1 = "Millenium Munch", double w1 = 2.85, int c1 = 350);
+void Show(Batonik b2);
+int main()
+{
+	Batonik snickers = {};
+	funkcja(snickers);
+	Show(snickers);
+
+}
+void funkcja(Batonik &b1, const char* n1, double w1, int c1)
+{
+	b1.ptr = n1;
+	b1.weight = w1;
+	b1.calories = c1;
+}
+void Show(Batonik b2){
+	cout << b2.ptr << endl;
+	cout << b2.weight << endl;
+	cout << b2.calories << endl;
+}
