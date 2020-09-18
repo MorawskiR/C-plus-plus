@@ -1,0 +1,56 @@
+
+#include <iostream>
+#include <math.h>
+#include <string>
+#include <algorithm>
+#include <string>
+#include <typeinfo>
+#include <stdio.h>
+#include <ctype.h>
+#include <cstring> // dla strlen, strcpy()
+using namespace std;
+
+struct stringy
+{
+	const char* ptr;
+	int ct;
+};
+
+void set(stringy& s1, const char* n1)
+{
+
+	s1.ptr = n1;
+	//s1.ptr = *p;
+	s1.ct = 10;
+}
+
+void show(const char* p, int n = 1);
+void show(stringy& s1, int n = 3);
+
+int main()
+{
+	stringy beany;
+	char testing[] = "rzeczywistosc bla bla";
+	set(beany, testing);
+	show(beany);
+	show(beany, 2);
+	testing[0] = 'D';
+	testing[1] = 'u';
+	show(testing);
+	show(testing, 3);
+	show("Gotowe");
+
+}
+
+void show(const char* p, int n)
+{
+	cout << p << endl;
+}
+
+void show(stringy& s1, int n)
+{
+	for (size_t i = 0; i < n; i++)
+	{
+		cout << s1.ptr << endl;
+	}
+}
