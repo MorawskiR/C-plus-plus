@@ -1,0 +1,12 @@
+
+
+#include "Nagłówek.h"
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	wybor = menu_zakupy();
+	Shop(wybor);
+}
