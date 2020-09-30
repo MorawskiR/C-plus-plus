@@ -1,0 +1,43 @@
+
+
+#include <iostream>
+#include "Nagłówek.h"
+using namespace std;
+const int ArSize = 10;
+void strcount(const char* str);
+
+
+int main()
+{
+	char input[ArSize];
+	char next;
+	cout << "wprowadz wiersz: \n";
+	cin.get(input, ArSize);
+	while (cin)
+	{
+		cin.get(next);
+		while (next != '\n')
+		{
+			cin.get(next);
+		}
+		strcount(input);
+		cout << "wprowadz nastepny wiersz (pusty konczy)" << endl;
+		cin.get(input, ArSize);
+	}
+}
+void strcount(const char* str)
+{
+	static int total = 0;
+	int count = 0;
+
+	cout << "\"" << str << "\" zawiera";
+	while (*str++)
+	{
+		count++;
+	}
+	total += count;
+	cout << count << " znakow."<<endl;
+	cout << " laczznie " << total <<
+		"znakow" << endl;
+
+}
