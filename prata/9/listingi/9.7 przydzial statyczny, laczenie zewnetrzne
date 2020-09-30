@@ -1,0 +1,35 @@
+
+#include <iostream>
+
+using namespace std;
+
+extern int tom;
+static int dick = 10;
+int harry = 200;
+void remote_access()
+{
+	cout << "remote_access() returns : " << endl;
+	cout << &tom << " = &tom, " << &dick << " = &dick" << endl;
+	cout << &harry << " = &harry\n";
+}
+
+
+
+
+#include <iostream>
+#include "Nagłówek.h"
+using namespace std;
+
+int tom = 3;
+int dick = 30;
+static int harry = 300;
+void remote_access();
+
+int main()
+{
+	cout << "main returns: " << endl;
+	cout << &tom << " = &tom, " << &dick << " = &dick" << endl;
+	cout << &harry << " = &harry\n";
+	remote_access();
+}
+
