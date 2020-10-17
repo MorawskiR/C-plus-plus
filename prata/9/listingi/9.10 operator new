@@ -1,0 +1,64 @@
+
+
+#include <iostream>
+#include <new>
+#include "Nagłówek.h"
+using namespace std;
+
+const int BUF = 512;
+const int N = 5;
+char buffer[BUF];
+int main()
+{
+	double* pd1, * pd2;
+	int i;
+	cout << "Wywołanie new zwykłego i miejscowego: \n";
+	pd1 = new double[N];
+	pd2 = new (buffer) double[N];
+	for (i = 0; i < N; i++)
+		pd2[i] = pd1[i] = 1000 + 20.0 * i;
+	cout << " Adres pamięci: \n " << "sterta: " << pd1 << " Pamiec statyczna: " << (void*)buffer << endl;
+	cout << " Zawartośc pamięci: \n";
+	for (i = 0; i < N; i++)
+	{
+		cout << pd1[i] << " pod adresem " << &pd1 << endl;
+		cout << pd2[i] << " pod adresem " << &pd2 << endl;
+	}
+
+
+
+	cout << endl << "Drugie wysolanie zwyklego i miejscowego new : \n";
+	double *pd3, *pd4;
+	pd3 = new double[N];
+	pd4 = new (buffer) double[N];
+
+	for ( i = 0; i < N; i++)
+		pd3[i] = pd4[i] = 1000 + 40 * i;
+	cout << " Zawartośc pamięci: \n";
+	for (i = 0; i < N; i++)
+	{
+		cout << pd3[i] << " pod adresem " << &pd3 << endl;
+		cout << pd4[i] << " pod adresem " << &pd4 << endl;
+	}
+
+
+
+
+	cout << endl << "Trzecie wysolanie zwyklego i miejscowego new : \n";
+	delete [] pd1;
+	pd1 = new double[N];
+	pd2 = new (buffer + N * sizeof(double)) double[N];
+
+	for (i = 0; i < N; i++)
+	{
+		pd1[i] = pd2[i] = 1000 + 60 * i;
+	}
+	cout << " Zawartośc pamięci: \n";
+	for (i = 0; i < N; i++)
+	{
+		cout << pd1[i] << " pod adresem " << &pd1 << endl;
+		cout << pd2[i] << " pod adresem " << &pd2 << endl;
+	}
+	delete[] pd1;
+	delete[] pd3;
+}
