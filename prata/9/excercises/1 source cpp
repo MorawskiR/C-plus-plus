@@ -1,0 +1,33 @@
+using namespace std;
+#include "Nagłówek.h"
+#include <string.h>
+#include <iostream>
+
+void setgolf(golf& g, const char* name, int hc)
+{
+	int size = 0;
+	int i = 0;
+	char tablica[40];
+	while (name[size] != '\0')
+	{
+		size++;
+	}
+	for (i = 0; i < 7; i++)
+	{
+		g.fullname[i] = name[i];
+	}
+	while (i <= size)
+		g.fullname[i++] = '\0';
+	
+	g.handicap = hc;
+	cout << "name: "<<g.fullname << ", handi: " << g.handicap;
+}
+
+//wersja interaktywna
+// 1 jesli imie pobrane, 0 jezeli nie 
+void setgolf(golf& g);
+
+//ustawia handi gracza
+void handicap(golf& g, int hc);
+
+void showgold(const golf& g);
