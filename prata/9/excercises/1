@@ -1,0 +1,22 @@
+
+#pragma once
+
+const int Len = 40;
+struct golf
+{
+	char fullname[Len];
+	int handicap;
+};
+
+//wersja nieinteraktywna 
+//ustawianie zmiennych w strukturze na podstawia argumentow wywolania
+void setgolf(golf& g, const char* name, int hc); 
+
+//wersja interaktywna
+// 1 jesli imie pobrane, 0 jezeli nie 
+void setgolf(golf& g);
+
+//ustawia handi gracza
+void handicap(golf& g, int hc);
+
+void showgold(const golf& g);
