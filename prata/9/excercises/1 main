@@ -1,0 +1,12 @@
+
+#include <iostream>
+using namespace std;
+#include "Nagłówek.h"
+
+
+int main()
+{
+	golf ann;
+	setgolf(ann, "niewiem", 5);
+}
+
