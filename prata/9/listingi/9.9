@@ -1,0 +1,44 @@
+
+
+#include <iostream>
+
+const int ArSize = 10;
+
+void strcount(const char* str);
+int main()
+{
+    using namespace std;
+    char input[ArSize];
+    char next;
+
+    cout << "Wprowadz wirsz: \n";
+    cin.get(input, ArSize);
+    while (cin)
+    {
+        cin.get(next);
+        while (next != '\n')
+        {
+            cin.get(next);
+        }
+        strcount(input);
+        cout << "wprowadz nastepy wirsza(pusty konczy) \n";
+        cin.get(input, ArSize);
+    }
+    cout << "Koniec";
+}
+
+void strcount(const char* str)
+{
+    using namespace std;
+    static int total = 0;
+    int count = 0;
+
+    cout << "\"" << str << "zawiera ";
+    while (*str++)
+        count++;
+    total += count;
+    cout << count << " znakow \n";
+    cout << " Lacznie " << total << " znakow" << endl;
+    
+}
+    
