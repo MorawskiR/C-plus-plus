@@ -1,0 +1,39 @@
+#include <new>
+#include <string>
+#include <iostream>
+// miejscowa wersja new 
+struct chaff
+{
+    char dogs[20];
+    int slag;
+};
+const int BUF = 512;
+const int N = 2;
+char buffer[BUF];
+int main()
+{
+    chaff* pd1 = new (buffer) chaff[2];
+
+    strcpy_s(pd1[0].dogs, "czlowiek");
+    strcpy_s(pd1[1].dogs, "malpa");
+
+    pd1[0].slag = 15;
+    pd1[1].slag = 20;
+
+
+    chaff* pd2 = new chaff[N];
+    strcpy_s(pd2[0].dogs, "aaaa");
+    strcpy_s(pd2[1].dogs, "bbbb");
+    pd2[0].slag = 10;
+    pd2[1].slag = 12;
+
+    for (int i = 0; i < N; i++)
+    {
+        std::cout << pd1[i].dogs << std::endl;
+        std::cout << pd1[i].slag << std::endl;
+        std::cout << pd2[i].dogs << std::endl;
+        std::cout << pd2[i].slag << std::endl;
+    }
+    delete pd1;
+}
+
