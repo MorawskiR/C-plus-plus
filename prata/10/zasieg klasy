@@ -1,0 +1,22 @@
+
+
+#include <iostream>
+using namespace std;
+class Ik
+{
+private: int fuss;
+public:
+    Ik(int f = 9) { fuss = f; }
+    void ViewIK() const;
+};
+void Ik::ViewIK() const {
+    cout << fuss;
+}
+int main()
+{
+    Ik* pik = new Ik;
+    Ik ee = Ik(9);
+
+    ee.ViewIK();
+    pik->ViewIK();
+}
