@@ -1,0 +1,77 @@
+// header 
+#pragma once
+#include <iostream>
+#include <string>
+class Class
+{
+private:
+	std::string last_name; 
+	long int acctont_no;
+	long double saldo;
+
+public:
+	//tworzenie obiektu, konstruktor
+	Class();
+	Class(const std::string& name, long int number, long double balance);
+	//wyswietlenie klasy
+
+	void show_details();
+	void payment(long double p);
+	void withdraw(long double w);
+};
+
+// declaration 
+#include "Class.h"
+using namespace std;
+Class::Class()
+{
+	last_name = "bez nazwy";
+	acctont_no = 0;
+	saldo = 1000.0;
+}
+Class::Class(const std::string& name, long int number, long double balance)
+{
+	last_name = name;
+	acctont_no = number;
+	saldo = balance;
+}
+
+void Class::payment(long double p)
+{
+	if (p < 0)
+	{
+		std::cout << "nie mozna wplacic ujemnej lub 0\n";
+	}
+	else
+	{
+		saldo += p;
+	}
+}
+void Class::withdraw(long double w)
+{
+	if ( w > saldo)
+	{
+		std::cout << "nie mozna wplacic wiecej niz jest na koncie  lub 0\n";
+	}
+	saldo -= w;
+}
+void Class::show_details()
+{
+	cout << "owner: " << last_name << endl;
+
+	cout << "Account no.: " << acctont_no << endl;
+	
+	cout << "balance: " << saldo << endl;
+}
+// main 
+
+#include <iostream>
+#include "Class.h"
+int main()
+{
+	Class s1;
+	s1.show_details();
+
+	Class s2("noob", 123, 93.5);
+	s2.show_details();
+}
