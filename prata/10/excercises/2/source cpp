@@ -1,0 +1,60 @@
+#include "Person.h"
+#include <iostream>
+
+
+
+void Person::Show() const
+{
+	cout << "Funkcja Show: " << endl;
+	std::cout <<"lname: "<< lname << std::endl;
+	int i;
+	std::cout << "fname: " ;
+	if (fname[0] == '\0')
+	{
+		cout << " ";
+	}
+	else
+	{
+
+
+		for (i = 0; i < LIMIT; i++)
+		{
+			if (fname[i] == 0)
+			{
+				continue;
+			}
+			else {
+				cout << fname[i];
+			}
+		}
+	}
+	cout << endl;
+}
+void Person::FormalShow() const
+{
+
+	cout << "Format Show: " << endl;
+	std::cout << "lname: " << lname << std::endl;
+	std::cout << "fname: " ;
+
+	int i;
+	if (fname[0] == '\0')
+	{
+		cout << " ";
+	}
+	else
+	{
+
+		for (i = 0; i < LIMIT; i++)
+		{
+			if (fname[i] == 0)
+			{
+				continue;
+			}
+			else {
+				cout << fname[i];
+			}
+		}
+	}
+	cout << endl;
+}
