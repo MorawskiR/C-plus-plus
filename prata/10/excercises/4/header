@@ -1,0 +1,38 @@
+#pragma once
+#include <string>
+namespace SALES
+{
+	class Sales
+	{
+	private:
+		static const int QUATERS = 4;
+		double sales[QUATERS];
+		double average;
+		double max;
+		double min;
+	public:
+		Sales()
+		{
+			sales[0] = { 2.3};
+			sales[1] = { 3.5};
+			sales[2] = { 1.3};
+			sales[3] = { 8.3};
+			average = 0;
+			max = 0;
+			min = 0;
+		}
+		Sales(double ar[], double a, double mi, double mx)
+		{
+			for (int i = 0; i < QUATERS; i++)
+			{
+				sales[i] = ar[i];
+			}
+			average = a;
+			min = mi;
+			max = mx;
+
+		}
+		void display();
+	};
+
+}
