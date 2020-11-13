@@ -1,0 +1,23 @@
+#include "setGolf.h"
+using namespace std;
+#include <iostream>
+
+void setGolf::display() const{
+	cout << fullname << endl;
+	cout << handicap;
+}
+
+const setGolf& setGolf::setting(const setGolf& s)const
+{
+	
+	if (s.handicap > handicap)
+	{
+		return s;
+		cout << "a";
+	}
+	else
+	{
+		cout << "b";
+		return *this;
+	}
+}
