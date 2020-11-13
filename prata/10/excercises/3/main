@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+#include "setGolf.h"
+
+
+int main()
+{
+	setGolf s1("znaki", 15);
+	s1.display();
+	setGolf s2;
+	cout << endl;
+	s2.display();
+	cout << endl;
+	s1.setting(s2);
+}
