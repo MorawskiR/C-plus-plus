@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
+	cout<<"lets play a game";
 	intro();
 	pobierzWartosci();
 	menu();
